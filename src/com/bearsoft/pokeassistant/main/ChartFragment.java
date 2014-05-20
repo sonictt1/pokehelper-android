@@ -25,7 +25,7 @@ public class ChartFragment extends Fragment
 		View chart = inflater.inflate(R.layout.fragment_chart, container, false);
 		final TouchImageView typeChart = (TouchImageView) chart.findViewById(R.id.type_chart);
 		
-		
+		((ActionBarActivity) getActivity()).getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 		Toast.makeText(getActivity(), "Type charts curtousy of Bulbapedia.", Toast.LENGTH_LONG).show();
 		
 		

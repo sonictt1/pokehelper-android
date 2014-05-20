@@ -17,15 +17,15 @@ import android.widget.Toast;
 public class MainActivity extends ActionBarActivity 
 {
 
-	public static ActionBar actionBar;
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) 
     {
     	
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        actionBar = getSupportActionBar();
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+        
+        
     }
     
     @Override
@@ -40,99 +40,99 @@ public class MainActivity extends ActionBarActivity
 //        fragTrans.add(R.id.fragment_chart, new ChartFragment());
 //        fragTrans.commit();
     	
-final TouchImageView typeChart = (TouchImageView) findViewById(R.id.type_chart);
-		
-		
-		Toast.makeText(this, "Type charts curtousy of Bulbapedia.", Toast.LENGTH_LONG).show();
-		
-		
-		Tab generationOne = getSupportActionBar().newTab();
-		generationOne.setText("Gen 1");
-		generationOne.setTabListener(new TabListener() 
-		{
-			
-			@Override
-			public void onTabUnselected(Tab arg0, FragmentTransaction arg1) 
-			{
-				
-				
-			}
-			
-			@Override
-			public void onTabSelected(Tab arg0, FragmentTransaction arg1) 
-			{
-				
-				typeChart.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.gen_one_type_chart));
-				
-			}
-			
-			@Override
-			public void onTabReselected(Tab arg0, FragmentTransaction arg1) 
-			{
-				typeChart.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.gen_one_type_chart));
-				
-			}
-		});
-    	
-		ActionBar.Tab generationTwo = getSupportActionBar().newTab();
-		generationTwo.setText("Gen 2-5");
-		generationTwo.setTabListener(new TabListener() 
-		{
-			
-			@Override
-			public void onTabUnselected(Tab arg0, FragmentTransaction arg1) 
-			{
-				
-				
-			}
-			
-			@Override
-			public void onTabSelected(Tab arg0, FragmentTransaction arg1) 
-			{
-				
-				typeChart.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.gen_two_through_five_type_chart));
-				
-			}
-			
-			@Override
-			public void onTabReselected(Tab arg0, FragmentTransaction arg1) 
-			{
-				typeChart.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.gen_two_through_five_type_chart));
-				
-			}
-		});
-		
-		ActionBar.Tab generationSix = getSupportActionBar().newTab();
-		generationSix.setText("Gen 6");
-		generationSix.setTabListener(new TabListener() 
-		{
-			
-			@Override
-			public void onTabUnselected(Tab arg0, FragmentTransaction arg1) 
-			{
-				
-				
-			}
-			
-			@Override
-			public void onTabSelected(Tab arg0, FragmentTransaction arg1) 
-			{
-				
-				typeChart.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.gen_six_type_chart));
-				
-			}
-			
-			@Override
-			public void onTabReselected(Tab arg0, FragmentTransaction arg1) 
-			{
-				typeChart.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.gen_six_type_chart));
-				
-			}
-		});
-		
-		getSupportActionBar().addTab(generationOne);
-		getSupportActionBar().addTab(generationTwo);
-		getSupportActionBar().addTab(generationSix);
+//final TouchImageView typeChart = (TouchImageView) findViewById(R.id.type_chart);
+//		
+//		
+//		Toast.makeText(this, "Type charts curtousy of Bulbapedia.", Toast.LENGTH_LONG).show();
+//		
+//		
+//		Tab generationOne = getSupportActionBar().newTab();
+//		generationOne.setText("Gen 1");
+//		generationOne.setTabListener(new TabListener() 
+//		{
+//			
+//			@Override
+//			public void onTabUnselected(Tab arg0, FragmentTransaction arg1) 
+//			{
+//				
+//				
+//			}
+//			
+//			@Override
+//			public void onTabSelected(Tab arg0, FragmentTransaction arg1) 
+//			{
+//				
+//				typeChart.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.gen_one_type_chart));
+//				
+//			}
+//			
+//			@Override
+//			public void onTabReselected(Tab arg0, FragmentTransaction arg1) 
+//			{
+//				typeChart.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.gen_one_type_chart));
+//				
+//			}
+//		});
+//    	
+//		ActionBar.Tab generationTwo = getSupportActionBar().newTab();
+//		generationTwo.setText("Gen 2-5");
+//		generationTwo.setTabListener(new TabListener() 
+//		{
+//			
+//			@Override
+//			public void onTabUnselected(Tab arg0, FragmentTransaction arg1) 
+//			{
+//				
+//				
+//			}
+//			
+//			@Override
+//			public void onTabSelected(Tab arg0, FragmentTransaction arg1) 
+//			{
+//				
+//				typeChart.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.gen_two_through_five_type_chart));
+//				
+//			}
+//			
+//			@Override
+//			public void onTabReselected(Tab arg0, FragmentTransaction arg1) 
+//			{
+//				typeChart.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.gen_two_through_five_type_chart));
+//				
+//			}
+//		});
+//		
+//		ActionBar.Tab generationSix = getSupportActionBar().newTab();
+//		generationSix.setText("Gen 6");
+//		generationSix.setTabListener(new TabListener() 
+//		{
+//			
+//			@Override
+//			public void onTabUnselected(Tab arg0, FragmentTransaction arg1) 
+//			{
+//				
+//				
+//			}
+//			
+//			@Override
+//			public void onTabSelected(Tab arg0, FragmentTransaction arg1) 
+//			{
+//				
+//				typeChart.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.gen_six_type_chart));
+//				
+//			}
+//			
+//			@Override
+//			public void onTabReselected(Tab arg0, FragmentTransaction arg1) 
+//			{
+//				typeChart.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.gen_six_type_chart));
+//				
+//			}
+//		});
+//		
+//		getSupportActionBar().addTab(generationOne);
+//		getSupportActionBar().addTab(generationTwo);
+//		getSupportActionBar().addTab(generationSix);
     }
 
 
