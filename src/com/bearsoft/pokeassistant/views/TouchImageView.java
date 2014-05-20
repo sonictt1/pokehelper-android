@@ -1329,7 +1329,8 @@ public class TouchImageView extends ImageView {
     	}
     }
     
-    private void printMatrixInfo() 
+    @SuppressWarnings("unused")
+	private void printMatrixInfo() 
     {
     	float[] n = new float[9];
     	matrix.getValues(n);

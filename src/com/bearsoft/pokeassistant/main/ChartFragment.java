@@ -1,15 +1,13 @@
 package com.bearsoft.pokeassistant.main;
 
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBar.Tab;
 import android.support.v7.app.ActionBar.TabListener;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,16 +21,15 @@ public class ChartFragment extends Fragment
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) 
 	{
-		// TODO Auto-generated method stub
-		ActionBar actionBar = MainActivity.actionBar;
-		View chart = inflater.inflate(R.layout.fragment_chart, container);
+		
+		View chart = inflater.inflate(R.layout.fragment_chart, container, false);
 		final TouchImageView typeChart = (TouchImageView) chart.findViewById(R.id.type_chart);
 		
 		
 		Toast.makeText(getActivity(), "Type charts curtousy of Bulbapedia.", Toast.LENGTH_LONG).show();
 		
 		
-		ActionBar.Tab generationOne = actionBar.newTab();
+		Tab generationOne = ((ActionBarActivity) getActivity()).getSupportActionBar().newTab();
 		generationOne.setText("Gen 1");
 		generationOne.setTabListener(new TabListener() 
 		{
@@ -60,7 +57,7 @@ public class ChartFragment extends Fragment
 			}
 		});
     	
-		ActionBar.Tab generationTwo = actionBar.newTab();
+		ActionBar.Tab generationTwo = ((ActionBarActivity) getActivity()).getSupportActionBar().newTab();
 		generationTwo.setText("Gen 2-5");
 		generationTwo.setTabListener(new TabListener() 
 		{
@@ -88,7 +85,7 @@ public class ChartFragment extends Fragment
 			}
 		});
 		
-		ActionBar.Tab generationSix = actionBar.newTab();
+		ActionBar.Tab generationSix = ((ActionBarActivity) getActivity()).getSupportActionBar().newTab();
 		generationSix.setText("Gen 6");
 		generationSix.setTabListener(new TabListener() 
 		{
@@ -116,11 +113,11 @@ public class ChartFragment extends Fragment
 			}
 		});
 		
-		actionBar.addTab(generationOne);
-		actionBar.addTab(generationTwo);
-		actionBar.addTab(generationSix);
+		((ActionBarActivity) getActivity()).getSupportActionBar().addTab(generationOne);
+		((ActionBarActivity) getActivity()).getSupportActionBar().addTab(generationTwo);
+		((ActionBarActivity) getActivity()).getSupportActionBar().addTab(generationSix);
 		
-		return super.onCreateView(inflater, container, savedInstanceState);
+		return chart;
 	}
 	
 	
