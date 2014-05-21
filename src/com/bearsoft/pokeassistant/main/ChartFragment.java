@@ -1,5 +1,6 @@
 package com.bearsoft.pokeassistant.main;
 
+import android.app.Dialog;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,8 +10,14 @@ import android.support.v7.app.ActionBar.Tab;
 import android.support.v7.app.ActionBar.TabListener;
 import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bearsoft.pokeassistant.views.TouchImageView;
@@ -27,7 +34,7 @@ public class ChartFragment extends Fragment
 		
 		((ActionBarActivity) getActivity()).getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 		Toast.makeText(getActivity(), "Type charts curtousy of Bulbapedia.", Toast.LENGTH_LONG).show();
-		
+		setHasOptionsMenu(true);
 		
 		Tab generationOne = ((ActionBarActivity) getActivity()).getSupportActionBar().newTab();
 		generationOne.setText("Gen 1");
@@ -117,7 +124,66 @@ public class ChartFragment extends Fragment
 		((ActionBarActivity) getActivity()).getSupportActionBar().addTab(generationTwo);
 		((ActionBarActivity) getActivity()).getSupportActionBar().addTab(generationSix);
 		
+		
 		return chart;
+	}
+	
+	@Override
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) 
+	{
+		
+		//menu.clear();
+		inflater.inflate(R.menu.type_chart, menu);
+		super.onCreateOptionsMenu(menu, inflater);
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) 
+	{	
+		switch (item.getItemId())
+		{
+			case R.id.game_info_box:
+				final Dialog games = new Dialog(getActivity());
+				games.setContentView(R.layout.games_dialog);
+				TextView gamesDialog = (TextView) games.findViewById(R.id.games);
+				Button done = (Button) games.findViewById(R.id.ok);
+				String title = "";
+				String dialog = "";
+				
+				if(((ActionBarActivity) getActivity()).getSupportActionBar().getSelectedTab().getText().equals(new String("Gen 1")))
+				{
+					title = "Generation 1 games.";
+					dialog = "Red, Blue, and Yellow versions.";
+				}
+				else if (((ActionBarActivity) getActivity()).getSupportActionBar().getSelectedTab().getText().equals(new String("Gen 2-5")))
+				{
+					title = "Generation 2-5 games.";
+					dialog = "Gold, Silver, Crystal, Ruby, Sapphire, Emerald, Diamond, Pearl, Platinum, Black 1 & 2, White 1 & 2.";
+				}
+				else if (((ActionBarActivity) getActivity()).getSupportActionBar().getSelectedTab().getText().equals(new String("Gen 6")))
+				{
+					title = "Generation 6+ games.";
+					dialog = "X, Y, Omega Ruby, Alpha Sapphire";
+				}
+				
+				games.setTitle(title);
+				gamesDialog.setText(dialog);
+				
+				done.setOnClickListener(new OnClickListener() 
+				{
+					
+					@Override
+					public void onClick(View v) 
+					{
+						games.dismiss();
+					}
+
+					
+				});
+				games.show();
+				
+		}
+		return super.onOptionsItemSelected(item);
 	}
 	
 	
