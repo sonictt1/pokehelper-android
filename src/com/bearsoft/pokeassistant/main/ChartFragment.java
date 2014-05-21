@@ -158,7 +158,7 @@ public class ChartFragment extends Fragment
 				else if (((ActionBarActivity) getActivity()).getSupportActionBar().getSelectedTab().getText().equals(new String("Gen 2-5")))
 				{
 					title = "Generation 2-5 games.";
-					dialog = "Gold, Silver, Crystal, Ruby, Sapphire, Emerald, Diamond, Pearl, Platinum, Black 1 & 2, White 1 & 2.";
+					dialog = "Gold, Silver, Crystal, Ruby, Sapphire, Emerald, FireRed, LeafGreen, Diamond, Pearl, Platinum, Black 1 & 2, White 1 & 2, HeartGold, and SoulSilver.";
 				}
 				else if (((ActionBarActivity) getActivity()).getSupportActionBar().getSelectedTab().getText().equals(new String("Gen 6")))
 				{
