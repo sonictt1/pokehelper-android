@@ -1,22 +1,22 @@
 package com.bearsoft.pokeassistant.main;
 
-import com.bearsoft.pokeassistant.views.TouchImageView;
 
-import android.graphics.BitmapFactory;
+
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar.Tab;
-import android.support.v7.app.ActionBar.TabListener;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.Toast;
+import android.widget.RelativeLayout;
 
-public class MainActivity extends ActionBarActivity 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+
+
+
+public class MainActivity extends ActionBarActivity
 {
 
+	final String MY_BANNER_UNIT_ID = "ca-app-pub-1577800667746091/3361312561";
+	final String MY_NOTE_3_ID = "4feab03c";
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) 
@@ -25,6 +25,24 @@ public class MainActivity extends ActionBarActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
+        AdView adView = (AdView) this.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+        
+//    	// Lookup R.layout.main
+//    	RelativeLayout layout = (RelativeLayout)findViewById(R.id.ad);
+//
+//    	// Create the adView
+//    	// Please replace MY_BANNER_UNIT_ID with your AdMob Publisher ID
+//    	AdView adView = new AdView(this);
+//    	adView.setAdSize(AdSize.BANNER);
+//    	adView.setAdUnitId(MY_BANNER_UNIT_ID);
+//
+//    	// Add the adView to it
+//    	layout.addView(adView);
+//
+//    	// Initiate a generic request to load it with an ad
+//    	adView.loadAd(new AdRequest.Builder().addTestDevice(MY_NOTE_3_ID).build());
         
     }
     

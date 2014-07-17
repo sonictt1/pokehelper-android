@@ -10,8 +10,8 @@
 
     <com.bearsoft.pokeassistant.views.TouchImageView
         android:id="@+id/type_chart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:src="@drawable/abc_ab_stacked_transparent_dark_holo"
