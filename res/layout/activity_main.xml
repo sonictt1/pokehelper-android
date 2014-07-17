@@ -20,6 +20,7 @@
      <fragment android:name="com.bearsoft.pokeassistant.main.ChartFragment"
          android:id="@+id/fragment_chart"
          android:layout_width="match_parent"
-         android:layout_height="match_parent" />
+         android:layout_height="match_parent" 
+         android:layout_below="@+id/adView"/>
     
     </RelativeLayout>
