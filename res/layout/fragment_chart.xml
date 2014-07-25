@@ -6,9 +6,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.bearsoft.pokeassistant.main.MainActivity" >
+    tools:context="net.bearsoft.pokeassistant.MainActivity" >
 
-    <com.bearsoft.pokeassistant.views.TouchImageView
+    <net.bearsoft.pokeassistant.views.TouchImageView
         android:id="@+id/type_chart"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"

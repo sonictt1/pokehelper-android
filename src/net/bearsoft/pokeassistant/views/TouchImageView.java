@@ -1,4 +1,4 @@
-package com.bearsoft.pokeassistant.views;
+package net.bearsoft.pokeassistant.views;
 
 import android.annotation.TargetApi;
 import android.content.Context;

@@ -1,5 +1,6 @@
-package com.bearsoft.pokeassistant.main;
+package net.bearsoft.pokeassistant;
 
+import net.bearsoft.pokeassistant.views.TouchImageView;
 import android.app.Dialog;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -20,7 +21,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bearsoft.pokeassistant.views.TouchImageView;
+import com.bearsoft.pokeassistant.main.R;
 
 public class ChartFragment extends Fragment 
 {

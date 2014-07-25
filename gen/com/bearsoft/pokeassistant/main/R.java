@@ -1474,7 +1474,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f070028;
         public static final int action_menu_presenter=0x7f070029;
         public static final int action_mode_close_button=0x7f070036;
-        public static final int action_settings=0x7f070054;
+        public static final int action_settings=0x7f07005a;
         public static final int activity_chooser_view_content=0x7f070037;
         public static final int adView=0x7f07004f;
         public static final int always=0x7f07001e;
@@ -1496,8 +1496,8 @@ containing a value of this type.
         public static final int expand_activities_button=0x7f070038;
         public static final int expanded_menu=0x7f07003e;
         public static final int fragment_chart=0x7f070050;
-        public static final int game_info_box=0x7f070055;
-        public static final int games=0x7f070052;
+        public static final int game_info_box=0x7f07005b;
+        public static final int games=0x7f070053;
         public static final int grayscale=0x7f070012;
         public static final int holo_dark=0x7f070005;
         public static final int holo_light=0x7f070006;
@@ -1515,7 +1515,13 @@ containing a value of this type.
         public static final int never=0x7f07001c;
         public static final int none=0x7f070000;
         public static final int normal=0x7f070001;
-        public static final int ok=0x7f070053;
+        public static final int ok=0x7f070054;
+        public static final int pokemon_id=0x7f070057;
+        public static final int pokemon_item=0x7f070055;
+        public static final int pokemon_list=0x7f070052;
+        public static final int pokemon_name=0x7f070056;
+        public static final int pokemon_type_one=0x7f070058;
+        public static final int pokemon_type_two=0x7f070059;
         public static final int production=0x7f070007;
         public static final int progress_circular=0x7f07002a;
         public static final int progress_horizontal=0x7f07002b;
@@ -1603,8 +1609,10 @@ containing a value of this type.
         public static final int abc_simple_decor=0x7f030017;
         public static final int activity_main=0x7f030018;
         public static final int fragment_chart=0x7f030019;
-        public static final int games_dialog=0x7f03001a;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001b;
+        public static final int fragment_pokedex=0x7f03001a;
+        public static final int games_dialog=0x7f03001b;
+        public static final int list_item_view_pokedex=0x7f03001c;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001d;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;
