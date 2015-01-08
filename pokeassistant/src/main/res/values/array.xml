@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="nav_drawer_array">
+        <item>Type Charts</item>
+        <item>Effectiveness Finder</item>
+    </string-array>
+</resources>

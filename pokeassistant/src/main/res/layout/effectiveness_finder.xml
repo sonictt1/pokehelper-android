@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/text_view_defending_pokemon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="5dp"
+        android:text="Defending Pokemon's Types"
+        android:textAlignment="center" />
+    <TextView
+        android:id="@+id/text_view_generation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="5dp"
+        android:text="Generation"/>
+    <Spinner
+        android:id="@+id/generation_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></Spinner>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:padding="5dp"
+        android:background="@color/dark_grey"/>
+    <TextView
+        android:id="@+id/text_view_type_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="5dp"
+        android:text="Type One"/>
+
+    <Spinner
+        android:id="@+id/type_1_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></Spinner>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:padding="5dp"
+        android:background="@color/dark_grey"/>
+    <TextView
+        android:id="@+id/text_view_type_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_gravity="center"
+        android:text="Type Two"/>
+    <Spinner
+        android:id="@+id/type_2_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></Spinner>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:padding="5dp"
+        android:background="@color/dark_grey"/>
+    <CheckBox
+        android:id="@+id/type_matching_check_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="Does one of the attacking Pokemon's types match the move type?"/>
+    <Button
+        android:id="@+id/effectiveness_finder_submit"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="Find weaknesses"/>
+</LinearLayout>
