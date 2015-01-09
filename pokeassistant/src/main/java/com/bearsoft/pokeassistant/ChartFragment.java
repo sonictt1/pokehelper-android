@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.PagerTabStrip;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBar.Tab;
 import android.support.v7.app.ActionBar.TabListener;
@@ -21,6 +22,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bearsoft.pokeassistant.views.TouchImageView;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 public class ChartFragment extends Fragment 
 {
@@ -31,8 +34,12 @@ public class ChartFragment extends Fragment
 		
 		View chart = inflater.inflate(R.layout.fragment_chart, container, false);
 		final TouchImageView typeChart = (TouchImageView) chart.findViewById(R.id.type_chart);
-		
-		((ActionBarActivity) getActivity()).getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+
+        AdView adView = (AdView) chart.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+
+                ((ActionBarActivity) getActivity()).getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 		Toast.makeText(getActivity(), "Type charts curtousy of Bulbapedia.", Toast.LENGTH_LONG).show();
 		setHasOptionsMenu(true);
 		
@@ -63,7 +70,7 @@ public class ChartFragment extends Fragment
 				
 			}
 		});
-    	
+
 		ActionBar.Tab generationTwo = ((ActionBarActivity) getActivity()).getSupportActionBar().newTab();
 		generationTwo.setText("Gen 2-5");
 		generationTwo.setTabListener(new TabListener() 
@@ -123,8 +130,6 @@ public class ChartFragment extends Fragment
 		((ActionBarActivity) getActivity()).getSupportActionBar().addTab(generationOne);
 		((ActionBarActivity) getActivity()).getSupportActionBar().addTab(generationTwo);
 		((ActionBarActivity) getActivity()).getSupportActionBar().addTab(generationSix);
-		
-		
 		return chart;
 	}
 	

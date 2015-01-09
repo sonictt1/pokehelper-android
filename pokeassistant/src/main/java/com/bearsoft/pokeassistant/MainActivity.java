@@ -7,6 +7,7 @@ import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -40,9 +41,7 @@ public class MainActivity extends ActionBarActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        AdView adView = (AdView) this.findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
+
 
         //mPlanetTitles = getResources().getStringArray(R.array.nav_drawer_array);
         mPlanetTitles = new String[2];
@@ -52,7 +51,9 @@ public class MainActivity extends ActionBarActivity
         LayoutInflater inflater = (LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.container);
+        mDrawerLayout.setClickable(true);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
+        mDrawerList.setClickable(true);
 
         // Set the adapter for the list view
         mDrawerList.setAdapter(new DrawerItemAdapter(this, mPlanetTitles));
@@ -80,6 +81,9 @@ public class MainActivity extends ActionBarActivity
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.container, new EffectivenessFinderFragment()).commit();
     }
 
     @Override
@@ -149,8 +153,29 @@ public class MainActivity extends ActionBarActivity
             name.setTextColor(Color.WHITE);
             name.setTextSize(20);
             name.setText(array[position]);
+            //convertView.setOnClickListener(getNavDrawerOnClickListener(array[position]));
             return convertView;
         }
+    }
+
+    private View.OnClickListener getNavDrawerOnClickListener(final String fragmentName){
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new Fragment();
+                if(fragmentName.equalsIgnoreCase("Match-up Charts"))
+                {
+                    fragment = new ChartFragment();
+                }
+                else if(fragmentName.equalsIgnoreCase("Effectiveness Finder")){
+                    fragment = new EffectivenessFinderFragment();
+                }
+
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+
+            }
+        };
     }
 
     private class DrawerItemClickListener implements ListView.OnItemClickListener
@@ -165,14 +190,18 @@ public class MainActivity extends ActionBarActivity
     /** Swaps fragments in the main content view */
     private void selectItem(int position) {
         // Create a new fragment and specify the planet to show based on position
-        Fragment fragment = new ChartFragment();
+        Fragment fragment = new Fragment();
         if(position == 0)
         {
             fragment = new ChartFragment();
         }
+        else if(position == 1)
+        {
+            fragment = new EffectivenessFinderFragment();
+        }
 
         // Insert the fragment by replacing any existing fragment
-        android.support.v4.app.FragmentManager fragmentManager = this.getSupportFragmentManager();
+        FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
                 .replace(R.id.container, fragment)
                 .commit();
@@ -180,7 +209,7 @@ public class MainActivity extends ActionBarActivity
         // Highlight the selected item, update the title, and close the drawer
         mDrawerList.setItemChecked(position, true);
         setTitle(mPlanetTitles[position]);
-        mDrawerLayout.closeDrawer(mDrawerList);
+        //mDrawerLayout.closeDrawer(mDrawerList);
     }
 
     @Override
